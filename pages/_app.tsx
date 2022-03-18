@@ -23,7 +23,7 @@ class MyApp extends App<Props, {}, State> {
     const { Component, pageProps } = this.props
     return (
       <>
-        <div className="min-h-screen">
+        <div className="min-h-screen pt-10 pb-20">
           <Component {...pageProps} />
         </div>
         <Footer />
