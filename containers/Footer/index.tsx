@@ -11,7 +11,7 @@ const Footer: FC<Props> = () => {
   return (
     <div className="bg-zinc-800">
       <div
-        className={classnames('container mx-auto pt-6 pb-20', {
+        className={classnames('container mx-auto px-5 pt-6 pb-20', {
           'max-w-screen-md': !!query.id
         })}
       >

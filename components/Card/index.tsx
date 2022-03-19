@@ -8,7 +8,7 @@ interface State {}
 
 const Card: FC<Props> = ({ href, children }) => {
   return (
-    <section className="space-y-3">
+    <section className="group space-y-3">
       <Link href={href} passHref>
         <img
           src="https://via.placeholder.com/384x216"
@@ -19,7 +19,9 @@ const Card: FC<Props> = ({ href, children }) => {
       </Link>
       <div>
         <Link href={href}>
-          <a className="text-lg font-semibold">{children}</a>
+          <a className="text-lg font-semibold group-hover:underline">
+            {children}
+          </a>
         </Link>
       </div>
     </section>
