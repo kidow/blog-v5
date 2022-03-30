@@ -8,12 +8,12 @@ dayjs.extend(relativeTime)
 export interface Props {
   id: number
   title: string
-  description: string
+  content: string
   createdAt: string
 }
 interface State {}
 
-const Post: FC<Props> = ({ id, title, description, createdAt }) => {
+const Post: FC<Props> = ({ id, title, content, createdAt }) => {
   return (
     <div className="group flex flex-col justify-between">
       <div className="font-medium sm:text-lg">
@@ -24,14 +24,11 @@ const Post: FC<Props> = ({ id, title, description, createdAt }) => {
       <div>
         <div className="mt-2.5 text-sm text-stone-400 line-clamp-3 sm:text-base">
           <Link href={`/${id}`}>
-            <a>{description}</a>
+            <a>{content}</a>
           </Link>
         </div>
         <div className="mt-2 text-sm text-stone-300 sm:text-base">
-          {dayjs()
-            .add(-Math.floor(Math.random() * 400), 'day')
-            .locale('ko')
-            .fromNow()}
+          {dayjs(createdAt).locale('ko').fromNow()}
         </div>
       </div>
     </div>
